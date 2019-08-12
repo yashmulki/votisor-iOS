@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Politics Brief-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController id="9pv-A4-QxB" customClass="UpdatesViewController" customModule="Votera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fd6-YZ-0vT">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="news" rowHeight="375" id="0E8-31-sXZ" customClass="VTNewsTableViewCell" customModule="Votera" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="375"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0E8-31-sXZ" id="xpp-KI-Oi4">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="374.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CZn-IK-YPi">
+                                                    <rect key="frame" x="20" y="20" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="MNy-Uv-cFu"/>
+                                                        <constraint firstAttribute="height" constant="60" id="qzc-sQ-nOq"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Trudeau taps outgoing NDP to chair new national security oversight body" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="maO-jm-dUs">
+                                                    <rect key="frame" x="88" y="32" width="306" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="48" id="xNb-2s-fQM"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J3x-Wi-uWW">
+                                                    <rect key="frame" x="20" y="95" width="374" height="182"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="182" id="RS4-kl-QzZ"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIu-wF-4t4">
+                                                    <rect key="frame" x="20" y="285" width="374" height="80"/>
+                                                    <string key="text">Prime Minister Justin Trudeau has appointed outgoing Victoria NDP MP Murray Rankin as chair of the new National Security and Intelligence Review Agency. (Mathieu Thériault/CBC)</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="CBCNEWS.CA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ZZ-pq-y4j">
+                                                    <rect key="frame" x="88" y="20" width="73" height="14"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="14" id="R4t-NL-ZD8"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="11"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="J3x-Wi-uWW" firstAttribute="trailing" secondItem="xpp-KI-Oi4" secondAttribute="trailingMargin" id="BMV-0P-0Tu"/>
+                                                <constraint firstItem="VIu-wF-4t4" firstAttribute="leading" secondItem="xpp-KI-Oi4" secondAttribute="leading" constant="20" id="EW4-Y1-KFK"/>
+                                                <constraint firstItem="maO-jm-dUs" firstAttribute="trailing" secondItem="xpp-KI-Oi4" secondAttribute="trailingMargin" id="GQb-cW-vQ1"/>
+                                                <constraint firstItem="CZn-IK-YPi" firstAttribute="leading" secondItem="xpp-KI-Oi4" secondAttribute="leadingMargin" id="H34-Gx-tiE"/>
+                                                <constraint firstAttribute="trailing" secondItem="VIu-wF-4t4" secondAttribute="trailing" constant="20" id="NpB-rJ-i5B"/>
+                                                <constraint firstItem="CZn-IK-YPi" firstAttribute="top" secondItem="xpp-KI-Oi4" secondAttribute="topMargin" constant="9" id="QdF-Mg-Amt"/>
+                                                <constraint firstItem="J3x-Wi-uWW" firstAttribute="leading" secondItem="xpp-KI-Oi4" secondAttribute="leadingMargin" id="UHd-6I-5XM"/>
+                                                <constraint firstItem="maO-jm-dUs" firstAttribute="top" secondItem="1ZZ-pq-y4j" secondAttribute="bottom" constant="-2" id="bLY-oh-QAL"/>
+                                                <constraint firstItem="maO-jm-dUs" firstAttribute="leading" secondItem="CZn-IK-YPi" secondAttribute="trailing" constant="23" id="ctz-C1-rso"/>
+                                                <constraint firstAttribute="bottom" secondItem="VIu-wF-4t4" secondAttribute="bottom" constant="9.5" id="ec4-9e-k8m"/>
+                                                <constraint firstItem="VIu-wF-4t4" firstAttribute="top" secondItem="J3x-Wi-uWW" secondAttribute="bottom" constant="8" id="m53-xJ-rtu"/>
+                                                <constraint firstItem="J3x-Wi-uWW" firstAttribute="top" secondItem="maO-jm-dUs" secondAttribute="bottom" constant="15" id="rU2-Sx-LeK"/>
+                                                <constraint firstItem="1ZZ-pq-y4j" firstAttribute="leading" secondItem="CZn-IK-YPi" secondAttribute="trailing" constant="23" id="vEz-bQ-68C"/>
+                                                <constraint firstItem="1ZZ-pq-y4j" firstAttribute="top" secondItem="xpp-KI-Oi4" secondAttribute="topMargin" constant="9" id="yLg-7h-AGf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="articleImage" destination="J3x-Wi-uWW" id="HEX-gL-fQc"/>
+                                            <outlet property="descriptionLabel" destination="VIu-wF-4t4" id="9Vx-a9-bjS"/>
+                                            <outlet property="sourceImageView" destination="CZn-IK-YPi" id="rqm-KU-B4m"/>
+                                            <outlet property="sourceName" destination="1ZZ-pq-y4j" id="oMU-E7-cHr"/>
+                                            <outlet property="titleLabel" destination="maO-jm-dUs" id="I8b-nq-dZi"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="polling" rowHeight="71" id="MTP-dr-nHj" customClass="VTPollingTableViewCell" customModule="Votera" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="403" width="414" height="71"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MTP-dr-nHj" id="Oou-nQ-yuu">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="raA-Ic-AVT">
+                                                    <rect key="frame" x="20" y="11" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="7AK-zi-Obb"/>
+                                                        <constraint firstAttribute="width" constant="50" id="aLe-yF-US0"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONSERVATIVE PARTY OF CANADA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gms-Rm-rXd">
+                                                    <rect key="frame" x="78" y="11" width="316" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="18" id="tvc-Py-9XH"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nh9-TY-3sK" customClass="LinearProgressBar" customModule="Votera" customModuleProvider="target">
+                                                    <rect key="frame" x="78" y="37" width="316" height="23"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34.5%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xh6-X4-hIA">
+                                                            <rect key="frame" x="140" y="4.5" width="36" height="14"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="36" id="gKz-Bw-WaQ"/>
+                                                                <constraint firstAttribute="height" constant="14" id="uB3-Kt-O0l"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="Xh6-X4-hIA" firstAttribute="centerX" secondItem="Nh9-TY-3sK" secondAttribute="centerX" id="iO1-0u-lOO"/>
+                                                        <constraint firstItem="Xh6-X4-hIA" firstAttribute="centerY" secondItem="Nh9-TY-3sK" secondAttribute="centerY" id="mvQ-Bi-EJW"/>
+                                                        <constraint firstAttribute="height" constant="23" id="vNa-Fu-UMZ"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="trackColor">
+                                                            <color key="value" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="barColor">
+                                                            <color key="value" red="0.22352941179999999" green="0.40000000000000002" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="progressValue">
+                                                            <real key="value" value="80"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="barPadding">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="trackPadding">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="barThickness">
+                                                            <real key="value" value="17"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="raA-Ic-AVT" firstAttribute="leading" secondItem="Oou-nQ-yuu" secondAttribute="leadingMargin" id="8IM-1x-l9h"/>
+                                                <constraint firstItem="Gms-Rm-rXd" firstAttribute="leading" secondItem="raA-Ic-AVT" secondAttribute="trailing" constant="8" id="BMB-Eq-XDy"/>
+                                                <constraint firstItem="Nh9-TY-3sK" firstAttribute="trailing" secondItem="Oou-nQ-yuu" secondAttribute="trailingMargin" id="Gq8-hJ-KLG"/>
+                                                <constraint firstItem="Gms-Rm-rXd" firstAttribute="top" secondItem="Oou-nQ-yuu" secondAttribute="topMargin" id="LpX-fD-TVl"/>
+                                                <constraint firstItem="Nh9-TY-3sK" firstAttribute="leading" secondItem="raA-Ic-AVT" secondAttribute="trailing" constant="8" id="amG-uk-BF7"/>
+                                                <constraint firstItem="Nh9-TY-3sK" firstAttribute="top" secondItem="Gms-Rm-rXd" secondAttribute="bottom" constant="8" id="bTC-sF-FIg"/>
+                                                <constraint firstItem="raA-Ic-AVT" firstAttribute="top" secondItem="Oou-nQ-yuu" secondAttribute="topMargin" id="gS2-44-MyW"/>
+                                                <constraint firstItem="Gms-Rm-rXd" firstAttribute="trailing" secondItem="Oou-nQ-yuu" secondAttribute="trailingMargin" id="mqz-ds-ShB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="partyImage" destination="raA-Ic-AVT" id="DlY-AO-DUI"/>
+                                            <outlet property="partyLabel" destination="Gms-Rm-rXd" id="3pN-zH-9QW"/>
+                                            <outlet property="progressBar" destination="Nh9-TY-3sK" id="vD4-W1-2JG"/>
+                                            <outlet property="progressDisplay" destination="Xh6-X4-hIA" id="xAw-9k-1Rf"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fd6-YZ-0vT" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="K2i-hQ-noc"/>
+                            <constraint firstItem="fd6-YZ-0vT" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="SBj-Oi-O9k"/>
+                            <constraint firstItem="fd6-YZ-0vT" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="WJK-Jq-QGB"/>
+                            <constraint firstItem="fd6-YZ-0vT" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="bT6-kF-PiP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Politics Brief" id="Plm-Rs-X17"/>
+                    <connections>
+                        <outlet property="table" destination="fd6-YZ-0vT" id="l0h-A4-QZx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1724.6376811594205" y="-1185.2678571428571"/>
+        </scene>
+        <!--2019 Election-->
+        <scene sceneID="wg7-f3-ORb">
+            <objects>
+                <viewController id="8rJ-Kc-sve" customClass="ElectionViewController" customModule="Votera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="41T-12-XJl">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lbR-KX-DSu">
+                                    <size key="itemSize" width="405" height="228"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="calendar" id="LKX-qP-ie0">
+                                        <rect key="frame" x="4.5" y="0.0" width="405" height="228"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="405" height="228"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="calendar" id="09Y-J3-XYO">
+                                        <rect key="frame" x="4.5" y="238" width="405" height="228"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="405" height="228"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gzj-pN-hae">
+                                                    <rect key="frame" x="20" y="64" width="365" height="144"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottomMargin" secondItem="Gzj-pN-hae" secondAttribute="bottom" constant="12" id="3sn-Qr-j88"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Gzj-pN-hae" secondAttribute="trailing" constant="12" id="bX0-Vh-2rN"/>
+                                            <constraint firstItem="Gzj-pN-hae" firstAttribute="leading" secondItem="09Y-J3-XYO" secondAttribute="leadingMargin" constant="12" id="c5z-UM-J8c"/>
+                                            <constraint firstItem="Gzj-pN-hae" firstAttribute="top" secondItem="09Y-J3-XYO" secondAttribute="topMargin" constant="12" id="wR8-US-E2a"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="41T-12-XJl" firstAttribute="bottom" secondItem="O1u-W8-tvY" secondAttribute="bottom" id="3b9-ZD-aPv"/>
+                            <constraint firstItem="41T-12-XJl" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="PQR-FQ-xXw"/>
+                            <constraint firstItem="41T-12-XJl" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="hD9-1J-9At"/>
+                            <constraint firstItem="41T-12-XJl" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="yHG-Xh-af7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="2019 Election" id="cu5-XY-uxq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1726.0869565217392" y="-518.30357142857144"/>
+        </scene>
+        <!--My Representatives-->
+        <scene sceneID="bb3-BL-8G6">
+            <objects>
+                <viewController id="Tqg-YT-oEk" customClass="VTViewController" customModule="Votera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CtC-cw-tAg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="feu-z1-MhJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="My Representatives" id="3iL-zn-BTT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WN2-Md-dnb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1726.0869565217392" y="176.78571428571428"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="HZG-sU-ODn">
+            <objects>
+                <viewController id="enZ-dO-Ckd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pcl-p4-sjO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="mPu-zq-5Ue"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3zy-GI-kX1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2665" y="854"/>
+        </scene>
+        <!--Discover-->
+        <scene sceneID="HoL-go-abJ">
+            <objects>
+                <viewController id="VKn-PA-Uha" customClass="VTViewController" customModule="Votera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wnP-Hr-63C">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="czg-9X-V9w"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Discover" id="nZF-cw-D38"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rNx-iU-fmq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1726.0869565217392" y="853.79464285714278"/>
+        </scene>
+        <!--Organize-->
+        <scene sceneID="f5Q-hR-h87">
+            <objects>
+                <viewController id="jnR-9b-iYB" customClass="OrganizeViewController" customModule="Votera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Oyv-aN-LTP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A2S-3X-eOR">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JKA-C9-Rvf">
+                                        <rect key="frame" x="78" y="267" width="258.5" height="191"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👋" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njh-Cf-Cvv">
+                                                <rect key="frame" x="73" y="0.0" width="112" height="124.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="104"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Encourage Contacts to Vote!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wu4-0k-2Q0">
+                                                <rect key="frame" x="19.5" y="132.5" width="219.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxp-Ct-6U4">
+                                                <rect key="frame" x="54" y="161" width="150" height="30"/>
+                                                <state key="normal" title="Give Contacts Access">
+                                                    <color key="titleColor" red="0.85043728350000003" green="0.21816034619999999" blue="0.15920260550000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="contactsAccess:" destination="jnR-9b-iYB" eventType="touchUpInside" id="rdF-wd-sX7"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="191" id="F3G-dP-Maw"/>
+                                            <constraint firstAttribute="width" constant="258.5" id="FGf-Es-Sne"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="JKA-C9-Rvf" firstAttribute="centerX" secondItem="A2S-3X-eOR" secondAttribute="centerX" id="2Ra-q2-gXC"/>
+                                    <constraint firstItem="JKA-C9-Rvf" firstAttribute="centerY" secondItem="A2S-3X-eOR" secondAttribute="centerY" id="8Qr-Zg-Kxb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="A2S-3X-eOR" firstAttribute="trailing" secondItem="mEZ-Py-9HA" secondAttribute="trailing" id="NWd-ms-sa5"/>
+                            <constraint firstItem="A2S-3X-eOR" firstAttribute="leading" secondItem="mEZ-Py-9HA" secondAttribute="leading" id="V4Z-Yv-0by"/>
+                            <constraint firstItem="A2S-3X-eOR" firstAttribute="top" secondItem="mEZ-Py-9HA" secondAttribute="top" id="a38-9N-N5k"/>
+                            <constraint firstItem="A2S-3X-eOR" firstAttribute="bottom" secondItem="mEZ-Py-9HA" secondAttribute="bottom" id="bGi-zj-NPF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mEZ-Py-9HA"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Organize" id="ihR-Z5-XZ0"/>
+                    <connections>
+                        <outlet property="permissionsView" destination="A2S-3X-eOR" id="JgO-cU-POe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FHx-IF-CPw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1726.0869565217392" y="1536.8303571428571"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" customClass="VTTabBarController" customModule="Votera" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="DVf-aa-PRa" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="VNU-5G-O7H" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="Yjc-1n-WLl" kind="relationship" relationship="viewControllers" id="pHx-sv-ts1"/>
+                        <segue destination="J60-Cn-TXr" kind="relationship" relationship="viewControllers" id="oTe-pA-3Dh"/>
+                        <segue destination="LLU-jQ-t9S" kind="relationship" relationship="viewControllers" id="ujg-5F-4ay"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--First-->
+        <scene sceneID="bSP-Ng-U1r">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DVf-aa-PRa" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FMx-cX-j0M" customClass="VTNavigationBar" customModule="Votera" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="LL1-8m-r6g"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ISl-uP-EEH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="819" y="-1184"/>
+        </scene>
+        <!--Second-->
+        <scene sceneID="vBc-LY-3dr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VNU-5G-O7H" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vxt-SA-AXF">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="J74-gR-S4W"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Edk-aH-xvK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="815.94202898550736" y="-518.30357142857144"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="LRz-Yd-YEf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Yjc-1n-WLl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="first" id="S8u-5w-t1Q"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9qm-Bn-mPY">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Tqg-YT-oEk" kind="relationship" relationship="rootViewController" id="lXS-jc-R5L"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fbn-bf-clI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="815.94202898550736" y="176.78571428571428"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="Qwd-Qw-gfP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J60-Cn-TXr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="second" id="Ibn-xn-NEs"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4xl-kF-C3P">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VKn-PA-Uha" kind="relationship" relationship="rootViewController" id="bL7-Vj-n0t"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XTx-e1-lTO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="815.94202898550736" y="853.79464285714278"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="Q4C-qC-itY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LLU-jQ-t9S" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="second" selectedImage="first" id="eo9-3y-u9b"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vOr-dP-Gmi">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jnR-9b-iYB" kind="relationship" relationship="rootViewController" id="S8M-84-HhB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="raL-nn-PFO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="815.94202898550736" y="1536.8303571428571"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="first" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
+    </resources>
+</document>

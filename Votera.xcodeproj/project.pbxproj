@@ -1,0 +1,719 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0216828722F5EB9400E4ED6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0216828622F5EB9400E4ED6E /* AppDelegate.swift */; };
+		0216828922F5EB9400E4ED6E /* UpdatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0216828822F5EB9400E4ED6E /* UpdatesViewController.swift */; };
+		0216828B22F5EB9400E4ED6E /* ElectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0216828A22F5EB9400E4ED6E /* ElectionViewController.swift */; };
+		0216828E22F5EB9400E4ED6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0216828C22F5EB9400E4ED6E /* Main.storyboard */; };
+		0216829022F5EB9900E4ED6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0216828F22F5EB9900E4ED6E /* Assets.xcassets */; };
+		0216829322F5EB9900E4ED6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0216829122F5EB9900E4ED6E /* LaunchScreen.storyboard */; };
+		0216829E22F5EB9900E4ED6E /* VoteraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0216829D22F5EB9900E4ED6E /* VoteraTests.swift */; };
+		021682A922F5EB9900E4ED6E /* VoteraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021682A822F5EB9900E4ED6E /* VoteraUITests.swift */; };
+		021682B722F5EC7F00E4ED6E /* VTTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021682B622F5EC7F00E4ED6E /* VTTabBarController.swift */; };
+		021682BE22F5F19500E4ED6E /* VTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021682BD22F5F19500E4ED6E /* VTViewController.swift */; };
+		021682C322F5F6ED00E4ED6E /* VTNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021682C222F5F6ED00E4ED6E /* VTNavigationBar.swift */; };
+		021682C522F5F7BA00E4ED6E /* VTSwitchableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021682C422F5F7BA00E4ED6E /* VTSwitchableViewController.swift */; };
+		021682CC22F5F84600E4ED6E /* TTSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021682CB22F5F84600E4ED6E /* TTSegmentedControl.swift */; };
+		022C815322FE7F3A001A2658 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022C815222FE7F3A001A2658 /* ContentView.swift */; };
+		022C815522FE867E001A2658 /* Candidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022C815422FE867E001A2658 /* Candidate.swift */; };
+		022C815722FE8A81001A2658 /* OrganizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022C815622FE8A81001A2658 /* OrganizeViewController.swift */; };
+		022D37FF22F640F8006AED2E /* VTStyleConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D37FE22F640F8006AED2E /* VTStyleConstants.swift */; };
+		02C3976B22FBDE700004DB69 /* NewsArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C3976A22FBDE700004DB69 /* NewsArticle.swift */; };
+		02C3976D22FBDED10004DB69 /* VTNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C3976C22FBDED10004DB69 /* VTNewsTableViewCell.swift */; };
+		02C3976F22FBDF260004DB69 /* VTPollingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C3976E22FBDF260004DB69 /* VTPollingTableViewCell.swift */; };
+		02DEC8CC22FD444A00E3117D /* LinearProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DEC8CB22FD444A00E3117D /* LinearProgressBar.swift */; };
+		02DEC8CE22FD486A00E3117D /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DEC8CD22FD486A00E3117D /* UIImageViewExtensions.swift */; };
+		02E107C722FD4EA90090BF06 /* PolIItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E107C622FD4EA90090BF06 /* PolIItem.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0216829A22F5EB9900E4ED6E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0216827B22F5EB9400E4ED6E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0216828222F5EB9400E4ED6E;
+			remoteInfo = Votera;
+		};
+		021682A522F5EB9900E4ED6E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0216827B22F5EB9400E4ED6E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0216828222F5EB9400E4ED6E;
+			remoteInfo = Votera;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0216828322F5EB9400E4ED6E /* Votera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Votera.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0216828622F5EB9400E4ED6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0216828822F5EB9400E4ED6E /* UpdatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatesViewController.swift; sourceTree = "<group>"; };
+		0216828A22F5EB9400E4ED6E /* ElectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectionViewController.swift; sourceTree = "<group>"; };
+		0216828D22F5EB9400E4ED6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0216828F22F5EB9900E4ED6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0216829222F5EB9900E4ED6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0216829422F5EB9900E4ED6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0216829922F5EB9900E4ED6E /* VoteraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoteraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0216829D22F5EB9900E4ED6E /* VoteraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteraTests.swift; sourceTree = "<group>"; };
+		0216829F22F5EB9900E4ED6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		021682A422F5EB9900E4ED6E /* VoteraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoteraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		021682A822F5EB9900E4ED6E /* VoteraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteraUITests.swift; sourceTree = "<group>"; };
+		021682AA22F5EB9900E4ED6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		021682B622F5EC7F00E4ED6E /* VTTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VTTabBarController.swift; sourceTree = "<group>"; };
+		021682BD22F5F19500E4ED6E /* VTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VTViewController.swift; sourceTree = "<group>"; };
+		021682C222F5F6ED00E4ED6E /* VTNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VTNavigationBar.swift; sourceTree = "<group>"; };
+		021682C422F5F7BA00E4ED6E /* VTSwitchableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VTSwitchableViewController.swift; sourceTree = "<group>"; };
+		021682CB22F5F84600E4ED6E /* TTSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSegmentedControl.swift; sourceTree = "<group>"; };
+		022C815222FE7F3A001A2658 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		022C815422FE867E001A2658 /* Candidate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Candidate.swift; sourceTree = "<group>"; };
+		022C815622FE8A81001A2658 /* OrganizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizeViewController.swift; sourceTree = "<group>"; };
+		022D37FE22F640F8006AED2E /* VTStyleConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VTStyleConstants.swift; sourceTree = "<group>"; };
+		02C3976A22FBDE700004DB69 /* NewsArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticle.swift; sourceTree = "<group>"; };
+		02C3976C22FBDED10004DB69 /* VTNewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VTNewsTableViewCell.swift; sourceTree = "<group>"; };
+		02C3976E22FBDF260004DB69 /* VTPollingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VTPollingTableViewCell.swift; sourceTree = "<group>"; };
+		02DEC8CB22FD444A00E3117D /* LinearProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearProgressBar.swift; sourceTree = "<group>"; };
+		02DEC8CD22FD486A00E3117D /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
+		02E107C622FD4EA90090BF06 /* PolIItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolIItem.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0216828022F5EB9400E4ED6E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0216829622F5EB9900E4ED6E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		021682A122F5EB9900E4ED6E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0216827A22F5EB9400E4ED6E = {
+			isa = PBXGroup;
+			children = (
+				0216828522F5EB9400E4ED6E /* Votera */,
+				0216829C22F5EB9900E4ED6E /* VoteraTests */,
+				021682A722F5EB9900E4ED6E /* VoteraUITests */,
+				0216828422F5EB9400E4ED6E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0216828422F5EB9400E4ED6E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0216828322F5EB9400E4ED6E /* Votera.app */,
+				0216829922F5EB9900E4ED6E /* VoteraTests.xctest */,
+				021682A422F5EB9900E4ED6E /* VoteraUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0216828522F5EB9400E4ED6E /* Votera */ = {
+			isa = PBXGroup;
+			children = (
+				021682BA22F5EC9B00E4ED6E /* Custom UI */,
+				021682C822F5F7DB00E4ED6E /* Storyboards */,
+				021682C922F5F7DF00E4ED6E /* Controllers */,
+				021682B822F5EC8600E4ED6E /* Models */,
+				0216828622F5EB9400E4ED6E /* AppDelegate.swift */,
+				0216828F22F5EB9900E4ED6E /* Assets.xcassets */,
+				0216829422F5EB9900E4ED6E /* Info.plist */,
+			);
+			path = Votera;
+			sourceTree = "<group>";
+		};
+		0216829C22F5EB9900E4ED6E /* VoteraTests */ = {
+			isa = PBXGroup;
+			children = (
+				0216829D22F5EB9900E4ED6E /* VoteraTests.swift */,
+				0216829F22F5EB9900E4ED6E /* Info.plist */,
+			);
+			path = VoteraTests;
+			sourceTree = "<group>";
+		};
+		021682A722F5EB9900E4ED6E /* VoteraUITests */ = {
+			isa = PBXGroup;
+			children = (
+				021682A822F5EB9900E4ED6E /* VoteraUITests.swift */,
+				021682AA22F5EB9900E4ED6E /* Info.plist */,
+			);
+			path = VoteraUITests;
+			sourceTree = "<group>";
+		};
+		021682B822F5EC8600E4ED6E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				02C3976A22FBDE700004DB69 /* NewsArticle.swift */,
+				02E107C622FD4EA90090BF06 /* PolIItem.swift */,
+				022C815422FE867E001A2658 /* Candidate.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		021682BA22F5EC9B00E4ED6E /* Custom UI */ = {
+			isa = PBXGroup;
+			children = (
+				022C815222FE7F3A001A2658 /* ContentView.swift */,
+				022D37FD22F640D6006AED2E /* Theming */,
+				022D37FC22F64072006AED2E /* Views */,
+				021682CA22F5F83700E4ED6E /* External */,
+				021682C722F5F7C900E4ED6E /* Configuration */,
+			);
+			path = "Custom UI";
+			sourceTree = "<group>";
+		};
+		021682C722F5F7C900E4ED6E /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				02DEC8CD22FD486A00E3117D /* UIImageViewExtensions.swift */,
+				021682B622F5EC7F00E4ED6E /* VTTabBarController.swift */,
+				021682C222F5F6ED00E4ED6E /* VTNavigationBar.swift */,
+				021682BD22F5F19500E4ED6E /* VTViewController.swift */,
+				021682C422F5F7BA00E4ED6E /* VTSwitchableViewController.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		021682C822F5F7DB00E4ED6E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				0216829122F5EB9900E4ED6E /* LaunchScreen.storyboard */,
+				0216828C22F5EB9400E4ED6E /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		021682C922F5F7DF00E4ED6E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0216828A22F5EB9400E4ED6E /* ElectionViewController.swift */,
+				0216828822F5EB9400E4ED6E /* UpdatesViewController.swift */,
+				022C815622FE8A81001A2658 /* OrganizeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		021682CA22F5F83700E4ED6E /* External */ = {
+			isa = PBXGroup;
+			children = (
+				021682CB22F5F84600E4ED6E /* TTSegmentedControl.swift */,
+				02DEC8CB22FD444A00E3117D /* LinearProgressBar.swift */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		022D37FC22F64072006AED2E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				02C3976C22FBDED10004DB69 /* VTNewsTableViewCell.swift */,
+				02C3976E22FBDF260004DB69 /* VTPollingTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		022D37FD22F640D6006AED2E /* Theming */ = {
+			isa = PBXGroup;
+			children = (
+				022D37FE22F640F8006AED2E /* VTStyleConstants.swift */,
+			);
+			path = Theming;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0216828222F5EB9400E4ED6E /* Votera */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 021682AD22F5EB9900E4ED6E /* Build configuration list for PBXNativeTarget "Votera" */;
+			buildPhases = (
+				0216827F22F5EB9400E4ED6E /* Sources */,
+				0216828022F5EB9400E4ED6E /* Frameworks */,
+				0216828122F5EB9400E4ED6E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Votera;
+			productName = Votera;
+			productReference = 0216828322F5EB9400E4ED6E /* Votera.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0216829822F5EB9900E4ED6E /* VoteraTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 021682B022F5EB9900E4ED6E /* Build configuration list for PBXNativeTarget "VoteraTests" */;
+			buildPhases = (
+				0216829522F5EB9900E4ED6E /* Sources */,
+				0216829622F5EB9900E4ED6E /* Frameworks */,
+				0216829722F5EB9900E4ED6E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0216829B22F5EB9900E4ED6E /* PBXTargetDependency */,
+			);
+			name = VoteraTests;
+			productName = VoteraTests;
+			productReference = 0216829922F5EB9900E4ED6E /* VoteraTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		021682A322F5EB9900E4ED6E /* VoteraUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 021682B322F5EB9900E4ED6E /* Build configuration list for PBXNativeTarget "VoteraUITests" */;
+			buildPhases = (
+				021682A022F5EB9900E4ED6E /* Sources */,
+				021682A122F5EB9900E4ED6E /* Frameworks */,
+				021682A222F5EB9900E4ED6E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				021682A622F5EB9900E4ED6E /* PBXTargetDependency */,
+			);
+			name = VoteraUITests;
+			productName = VoteraUITests;
+			productReference = 021682A422F5EB9900E4ED6E /* VoteraUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0216827B22F5EB9400E4ED6E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Yashvardhan Mulki";
+				TargetAttributes = {
+					0216828222F5EB9400E4ED6E = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					0216829822F5EB9900E4ED6E = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 0216828222F5EB9400E4ED6E;
+					};
+					021682A322F5EB9900E4ED6E = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 0216828222F5EB9400E4ED6E;
+					};
+				};
+			};
+			buildConfigurationList = 0216827E22F5EB9400E4ED6E /* Build configuration list for PBXProject "Votera" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0216827A22F5EB9400E4ED6E;
+			productRefGroup = 0216828422F5EB9400E4ED6E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0216828222F5EB9400E4ED6E /* Votera */,
+				0216829822F5EB9900E4ED6E /* VoteraTests */,
+				021682A322F5EB9900E4ED6E /* VoteraUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0216828122F5EB9400E4ED6E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0216829322F5EB9900E4ED6E /* LaunchScreen.storyboard in Resources */,
+				0216829022F5EB9900E4ED6E /* Assets.xcassets in Resources */,
+				0216828E22F5EB9400E4ED6E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0216829722F5EB9900E4ED6E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		021682A222F5EB9900E4ED6E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0216827F22F5EB9400E4ED6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02DEC8CE22FD486A00E3117D /* UIImageViewExtensions.swift in Sources */,
+				021682CC22F5F84600E4ED6E /* TTSegmentedControl.swift in Sources */,
+				022C815522FE867E001A2658 /* Candidate.swift in Sources */,
+				022C815322FE7F3A001A2658 /* ContentView.swift in Sources */,
+				02C3976F22FBDF260004DB69 /* VTPollingTableViewCell.swift in Sources */,
+				021682BE22F5F19500E4ED6E /* VTViewController.swift in Sources */,
+				02C3976D22FBDED10004DB69 /* VTNewsTableViewCell.swift in Sources */,
+				02C3976B22FBDE700004DB69 /* NewsArticle.swift in Sources */,
+				0216828B22F5EB9400E4ED6E /* ElectionViewController.swift in Sources */,
+				021682B722F5EC7F00E4ED6E /* VTTabBarController.swift in Sources */,
+				0216828722F5EB9400E4ED6E /* AppDelegate.swift in Sources */,
+				0216828922F5EB9400E4ED6E /* UpdatesViewController.swift in Sources */,
+				022D37FF22F640F8006AED2E /* VTStyleConstants.swift in Sources */,
+				02E107C722FD4EA90090BF06 /* PolIItem.swift in Sources */,
+				021682C322F5F6ED00E4ED6E /* VTNavigationBar.swift in Sources */,
+				022C815722FE8A81001A2658 /* OrganizeViewController.swift in Sources */,
+				02DEC8CC22FD444A00E3117D /* LinearProgressBar.swift in Sources */,
+				021682C522F5F7BA00E4ED6E /* VTSwitchableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0216829522F5EB9900E4ED6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0216829E22F5EB9900E4ED6E /* VoteraTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		021682A022F5EB9900E4ED6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				021682A922F5EB9900E4ED6E /* VoteraUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0216829B22F5EB9900E4ED6E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0216828222F5EB9400E4ED6E /* Votera */;
+			targetProxy = 0216829A22F5EB9900E4ED6E /* PBXContainerItemProxy */;
+		};
+		021682A622F5EB9900E4ED6E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0216828222F5EB9400E4ED6E /* Votera */;
+			targetProxy = 021682A522F5EB9900E4ED6E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0216828C22F5EB9400E4ED6E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0216828D22F5EB9400E4ED6E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0216829122F5EB9900E4ED6E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0216829222F5EB9900E4ED6E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		021682AB22F5EB9900E4ED6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		021682AC22F5EB9900E4ED6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		021682AE22F5EB9900E4ED6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MX7F8VC2CH;
+				INFOPLIST_FILE = Votera/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yashmulki.Votera;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		021682AF22F5EB9900E4ED6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MX7F8VC2CH;
+				INFOPLIST_FILE = Votera/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yashmulki.Votera;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		021682B122F5EB9900E4ED6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MX7F8VC2CH;
+				INFOPLIST_FILE = VoteraTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yashmulki.VoteraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Votera.app/Votera";
+			};
+			name = Debug;
+		};
+		021682B222F5EB9900E4ED6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MX7F8VC2CH;
+				INFOPLIST_FILE = VoteraTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yashmulki.VoteraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Votera.app/Votera";
+			};
+			name = Release;
+		};
+		021682B422F5EB9900E4ED6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MX7F8VC2CH;
+				INFOPLIST_FILE = VoteraUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yashmulki.VoteraUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Votera;
+			};
+			name = Debug;
+		};
+		021682B522F5EB9900E4ED6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MX7F8VC2CH;
+				INFOPLIST_FILE = VoteraUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yashmulki.VoteraUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Votera;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0216827E22F5EB9400E4ED6E /* Build configuration list for PBXProject "Votera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				021682AB22F5EB9900E4ED6E /* Debug */,
+				021682AC22F5EB9900E4ED6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		021682AD22F5EB9900E4ED6E /* Build configuration list for PBXNativeTarget "Votera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				021682AE22F5EB9900E4ED6E /* Debug */,
+				021682AF22F5EB9900E4ED6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		021682B022F5EB9900E4ED6E /* Build configuration list for PBXNativeTarget "VoteraTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				021682B122F5EB9900E4ED6E /* Debug */,
+				021682B222F5EB9900E4ED6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		021682B322F5EB9900E4ED6E /* Build configuration list for PBXNativeTarget "VoteraUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				021682B422F5EB9900E4ED6E /* Debug */,
+				021682B522F5EB9900E4ED6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0216827B22F5EB9400E4ED6E /* Project object */;
+}
