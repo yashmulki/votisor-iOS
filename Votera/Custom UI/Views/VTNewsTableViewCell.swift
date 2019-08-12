@@ -27,9 +27,36 @@ class VTNewsTableViewCell: UITableViewCell {
         
         // if statements for images
         articleImage.imageFromServerURL(article.imageURL, placeHolder: UIImage(named: "placeholder-image.png"))
-        sourceImageView.image = UIImage(named: "newsSource-cbc.jpg")
         sourceImageView.layer.cornerRadius = 8.0
         sourceImageView.clipsToBounds = true
+        
+        var image = UIImage(named: "newsSource-cbc")
+        
+        switch article.source {
+        case "Macleans.ca":
+            image = UIImage(named: "newsSource-macleans")
+        case "Globalnews.ca":
+            image = UIImage(named: "newsSource-globalNews")
+        case "Thestar.com":
+            image = UIImage(named: "newsSource-torstar")
+        case "Nationalpost.com":
+            image = UIImage(named: "newsSource-natpost")
+        case "The Globe And Mail":
+            image = UIImage(named: "newsSource-globe")
+        case "montrealgazette.com":
+            image = UIImage(named: "newsSource-montgazette")
+        case "Financialpost.com":
+            image = UIImage(named: "newsSource-finpost")
+        case "Nationalobserver.com":
+            image = UIImage(named: "newsSource-natobserver")
+        case "Huffingtonpost.ca":
+            image = UIImage(named: "newsSource-natobserver")
+        default:
+            break
+        }
+        
+        sourceImageView.image = image
+        
     }
     
     func articleURL() -> URL? {

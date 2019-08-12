@@ -26,6 +26,8 @@
 	<string>Main</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Calendar Access is Required To Add the Election to Your Calendar</string>
+	<key>NSContactsUsageDescription</key>
+	<string>We need to access contacts to let you encourage them to vote</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

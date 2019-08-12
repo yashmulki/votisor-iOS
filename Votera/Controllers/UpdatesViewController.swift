@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import SafariServices
 
 class UpdatesViewController: VTSwitchableViewController {
-
+    
+    @IBOutlet var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet var table: UITableView!
     
+    private let refreshControl = UIRefreshControl()
+    private var safariVC: SFSafariViewController?
     
     private var displayingNews = true
-    private var articles: [NewsArticle] = [NewsArticle(title: "Trudeau taps outgoing NDP to chair new national security oversight body", description: "Prime Minister Justin Trudeau has appointed outgoing Victoria NDP MP Murray Rankin as chair of the new National Security and Intelligence Review Agency. (Mathieu Thériault/CBC)", source: "CBC News", imageURL: "https://i.cbc.ca/1.5241061.1565305537!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/cf-18.jpg", articleURL: "yote.org"), NewsArticle(title: "Hello World", description: "World World Hello World", source: "CBC News", imageURL: "https://i.cbc.ca/1.5241061.1565305537!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/cf-18.jpg", articleURL: "yote.org"), NewsArticle(title: "Hello World", description: "World World Hello World", source: "CBC News", imageURL: "https://i.cbc.ca/1.5241061.1565305537!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/cf-18.jpg", articleURL: "yote.org"), NewsArticle(title: "Hello World", description: "World World Hello World", source: "CBC News", imageURL: "https://i.cbc.ca/1.5241061.1565305537!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/cf-18.jpg", articleURL: "yote.org"), NewsArticle(title: "Hello World", description: "World World Hello World", source: "CBC News", imageURL: "https://i.cbc.ca/1.5241061.1565305537!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/cf-18.jpg", articleURL: "yote.org"), ]
+    private var articles: [NewsArticle] = []
     
     
     // Stored as ordered by polling %
@@ -43,6 +47,19 @@ class UpdatesViewController: VTSwitchableViewController {
         table.delegate = self
         table.dataSource = self
         table.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+        
+        if #available(iOS 10.0, *) {
+            table.refreshControl = refreshControl
+        } else {
+            table.addSubview(refreshControl)
+        }
+        refreshControl.addTarget(self, action: #selector(self.refreshData), for: .valueChanged)
+        
+        loadingIndicator.isHidden = false
+        loadingIndicator.startAnimating()
+        
+        // Get data
+        downloadArticles(offset: 0, limit: 20)
     }
 
 
@@ -56,13 +73,14 @@ extension UpdatesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if displayingNews {
-            var cell = tableView.dequeueReusableCell(withIdentifier: "news", for: indexPath) as! VTNewsTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "news", for: indexPath) as! VTNewsTableViewCell
             cell.configure(article: articles[indexPath.row])
             // Configure cell here
             return cell
         }
-        var cell = tableView.dequeueReusableCell(withIdentifier: "polling", for: indexPath) as! VTPollingTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "polling", for: indexPath) as! VTPollingTableViewCell
         cell.configure(item: polling[indexPath.row], highest: highest)
+        cell.animate()
         // Configure cell here
         return cell
     }
@@ -72,12 +90,118 @@ extension UpdatesViewController: UITableViewDelegate, UITableViewDataSource {
         return CGFloat(height)
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedItem = articles[indexPath.row]
+        guard let url = URL(string: selectedItem.articleURL) else {
+            return
+        }
+        safariVC = SFSafariViewController(url: url)
+        present(safariVC!, animated: true, completion: nil)
+    }
+    
     
 }
 
-// Manages fetching for news
+// Manages fetching for news and polling
 extension UpdatesViewController {
     
+    @objc private func refreshData() {
+        
+        if displayingNews {
+            articles = []
+           downloadArticles(offset: 0, limit: 20)
+        } else {
+            polling = []
+            downloadPolls()
+        }
+        table.reloadData()
+    }
     
+    private func downloadArticles(offset: Int, limit: Int) {
+        let endpoint = "http://165.22.233.166:10101/news"
+        let errorHandler = {
+            uiHelper.displayError(controller: self, title: "Error Getting Articles", message: "We're sorry, but we're having an issue fetching articles. Please reload or try again later", actionTitle: "Reload", onAction: { (action) in
+                self.downloadArticles(offset: offset, limit: limit)
+            })
+        }
+        APIManager.request(endpoint: endpoint) { (data, error) in
+            guard let data = data, error == nil else {
+                errorHandler()
+                return
+            }
+            do {
+                let json = try JSON(data: data)
+                guard let articles = json["newsArticles"].array else {
+                    errorHandler()
+                    return
+                }
+                var processedArticles: [NewsArticle] = []
+                for article in articles {
+                    guard let title = article["title"].string else {
+                        errorHandler()
+                        return
+                    }
+                    guard let source = article["source"]["name"].string else {
+                        errorHandler()
+                        return
+                    }
+                    guard let description = article["description"].string else {
+                        errorHandler()
+                        return
+                    }
+                    guard let articleURL = article["url"].string else {
+                        errorHandler()
+                        return
+                    }
+                    var imageURL = "https://imgplaceholder.com/350x225/ff7f7f/333333/fa-image"
+                    if let imgURL = article["urlToImage"].string {
+                        imageURL = imgURL
+                    }
+                    
+                    let processedArticle = NewsArticle(title: title, description: description, source: source, imageURL: imageURL, articleURL: articleURL)
+                    processedArticles.append(processedArticle)
+                }
+                
+                // Add to the data source and reload table
+                self.articles.append(contentsOf: processedArticles)
+                self.table.reloadData()
+                self.refreshControl.endRefreshing()
+                
+            self.loadingIndicator.startAnimating()
+                self.loadingIndicator.isHidden = true
+            } catch {
+               errorHandler()
+            }
+        }
+        
+    }
+    
+    private func downloadPolls() {
+        let endpoint = "http://165.22.233.166:10101/polling"
+        let errorHandler = {
+            uiHelper.displayError(controller: self, title: "Error Getting Polling", message: "We're sorry, but we're having an issue fetching polls. Please reload or try again later", actionTitle: "Reload", onAction: { (action) in
+                self.downloadPolls()
+            })
+        }
+        APIManager.request(endpoint: endpoint) { (data, error) in
+            guard let data = data, error == nil else {
+                errorHandler()
+                return
+            }
+            do {
+                let json = try JSON(data: data)
+                
+                
+               
+                self.table.reloadData()
+                self.refreshControl.endRefreshing()
+                
+                self.loadingIndicator.startAnimating()
+                self.loadingIndicator.isHidden = true
+            } catch {
+                errorHandler()
+            }
+        }
+    }
     
 }
