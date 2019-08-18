@@ -7,6 +7,18 @@
 //
 
 import UIKit
+import MapKit
+
+struct Location: Codable {
+    var lat: Double
+    var long: Double
+    
+    func toCoordinates() -> CLLocationCoordinate2D {
+        return CLLocationCoordinate2DMake(lat, long)
+    }
+}
+
+var currentLocation: Location? = nil
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +28,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if let loc = UserDefaults.standard.object(forKey: "loc") as? Data {
+            do {
+                currentLocation = try PropertyListDecoder().decode(Location.self, from: loc)
+                self.window = UIWindow(frame: UIScreen.main.bounds)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let initialViewController = storyboard.instantiateViewController(withIdentifier: "Feed")
+                self.window?.rootViewController = initialViewController
+                self.window?.makeKeyAndVisible()
+                return true
+            } catch {
+           
+            }
+        }
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: "Onboarding")
+        
+        self.window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
         return true
     }
 

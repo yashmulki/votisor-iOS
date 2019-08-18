@@ -21,8 +21,11 @@ class UpdatesViewController: VTSwitchableViewController {
     private var articles: [NewsArticle] = []
     
     
-    // Stored as ordered by polling %
-    private var polling: [PollItem] = [PollItem(party: "Conservative Party of Canada", pollingPCT: 34.5), PollItem(party: "Liberal Party of Canada", pollingPCT: 31.5), PollItem(party: "New Democratic Party", pollingPCT: 15.0), PollItem(party: "Green Party of Canada", pollingPCT: 12.0), PollItem(party: "Bloc Québécois", pollingPCT: 4.2), PollItem(party: "People's Party of Canada", pollingPCT: 2.7), ]
+//    // Stored as ordered by polling %
+//    private var polling: [PollItem] = [PollItem(party: "Conservative Party of Canada", pollingPCT: 34.5), PollItem(party: "Liberal Party of Canada", pollingPCT: 31.5), PollItem(party: "New Democratic Party", pollingPCT: 15.0), PollItem(party: "Green Party of Canada", pollingPCT: 12.0), PollItem(party: "Bloc Québécois", pollingPCT: 4.2), PollItem(party: "People's Party of Canada", pollingPCT: 2.7), ]
+    
+    private var polling: [PollItem] = []
+    
     private var highest: Double = 34.5
     
     
@@ -60,6 +63,7 @@ class UpdatesViewController: VTSwitchableViewController {
         
         // Get data
         downloadArticles(offset: 0, limit: 20)
+        downloadPolls()
     }
 
 
@@ -108,7 +112,7 @@ extension UpdatesViewController {
     @objc private func refreshData() {
         
         if displayingNews {
-            articles = []
+           articles = []
            downloadArticles(offset: 0, limit: 20)
         } else {
             polling = []
@@ -190,18 +194,84 @@ extension UpdatesViewController {
             }
             do {
                 let json = try JSON(data: data)
+                guard let polling = json["polling"].dictionary else {
+                    errorHandler()
+                    return
+                }
+                
+                guard let CPC = polling["CPC"]?.double else {
+                    errorHandler()
+                    return
+                }
                 
                 
+                guard let LPC = polling["LPC"]?.double else {
+                    errorHandler()
+                    return
+                }
+                
+                
+                guard let NDP = polling["NDP"]?.double else {
+                    errorHandler()
+                    return
+                }
+                
+                guard let GPC = polling["GRN"]?.double else {
+                    errorHandler()
+                    return
+                }
+                
+                guard let BQ = polling["BQ"]?.double else {
+                    errorHandler()
+                    return
+                }
+                
+                guard let PPC = polling["PPC"]?.double else {
+                    errorHandler()
+                    return
+                }
+                
+                let parties = ["Conservative Party of Canada", "Liberal Party of Canada", "New Democratic Party", "Green Party of Canada", "Bloc Québécois", "People's Party of Canada"]
+                let values = [CPC, LPC, NDP, GPC, BQ, PPC]
                
+                var (sParties, sValues) = self.partiesSortedByValue(parties: parties, values: values)
+                sParties = sParties.reversed()
+                sValues = sValues.reversed()
+                
+                for i in 0 ..< sParties.count {
+                    let item = PollItem(party: sParties[i], pollingPCT: sValues[i])
+                    self.polling.append(item)
+                }
+                
+                self.highest = sValues[0]
+                
                 self.table.reloadData()
                 self.refreshControl.endRefreshing()
                 
-                self.loadingIndicator.startAnimating()
+                self.loadingIndicator.stopAnimating()
                 self.loadingIndicator.isHidden = true
             } catch {
                 errorHandler()
             }
         }
+    }
+    
+    func partiesSortedByValue(parties: [String], values: [Double]) -> ([String], [Double]) {
+        var p = parties
+        var v = values
+        for x in 1..<v.count {
+            var y = x
+            let temp = v[y]
+            let party = p[y]
+            while y > 0 && temp < v[y - 1] {
+                v[y] = v[y - 1]
+                p[y] = p[y-1]
+                    y -= 1
+            }
+            v[y] = temp
+            p[y] = party
+        }
+        return (p, v)
     }
     
 }

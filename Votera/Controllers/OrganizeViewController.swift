@@ -42,7 +42,7 @@ class OrganizeViewController: VTViewController, MFMessageComposeViewControllerDe
             table.reloadData()
         } else {
             UserDefaults.standard.removeObject(forKey: "contPerm")
-            permissionsView.isHidden = true
+            permissionsView.isHidden = false
         }
     }
     

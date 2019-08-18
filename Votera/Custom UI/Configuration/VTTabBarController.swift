@@ -17,7 +17,7 @@ class VTTabBarController: UITabBarController {
         tabBar.tintColor = StyleConstants.vtRed
         
         // Set up tab bar customizations
-        removeTabbarItemsText()
+       // removeTabbarItemsText()
         
     }
     
