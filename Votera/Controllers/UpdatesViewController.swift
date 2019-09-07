@@ -19,7 +19,7 @@ class UpdatesViewController: VTSwitchableViewController {
     
     private var displayingNews = true
     private var articles: [NewsArticle] = []
-    
+    private var articlesCount: Int = 0
     
 //    // Stored as ordered by polling %
 //    private var polling: [PollItem] = [PollItem(party: "Conservative Party of Canada", pollingPCT: 34.5), PollItem(party: "Liberal Party of Canada", pollingPCT: 31.5), PollItem(party: "New Democratic Party", pollingPCT: 15.0), PollItem(party: "Green Party of Canada", pollingPCT: 12.0), PollItem(party: "Bloc Québécois", pollingPCT: 4.2), PollItem(party: "People's Party of Canada", pollingPCT: 2.7), ]
@@ -49,7 +49,7 @@ class UpdatesViewController: VTSwitchableViewController {
         // Set up table
         table.delegate = self
         table.dataSource = self
-        table.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+        table.contentInset = UIEdgeInsets(top: 5, left: 0, bottom: 0, right: 0)
         
         if #available(iOS 10.0, *) {
             table.refreshControl = refreshControl
@@ -62,8 +62,10 @@ class UpdatesViewController: VTSwitchableViewController {
         loadingIndicator.startAnimating()
         
         // Get data
-        downloadArticles(offset: 0, limit: 20)
+        downloadArticles(offset: 0, limit: 15)
         downloadPolls()
+        
+        
     }
 
 
@@ -95,12 +97,25 @@ extension UpdatesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if !displayingNews {
+            return
+        }
+        
         let selectedItem = articles[indexPath.row]
         guard let url = URL(string: selectedItem.articleURL) else {
             return
         }
-        safariVC = SFSafariViewController(url: url)
-        present(safariVC!, animated: true, completion: nil)
+//        safariVC = SFSafariViewController(url: url)
+//        present(safariVC!, animated: true, completion: nil)
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+    
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == tableView.numberOfRows(inSection: 0) - 1 && indexPath.row < articlesCount - 1 && displayingNews{
+            downloadArticles(offset: indexPath.row + 1, limit: 10)
+        }
     }
     
     
@@ -109,11 +124,11 @@ extension UpdatesViewController: UITableViewDelegate, UITableViewDataSource {
 // Manages fetching for news and polling
 extension UpdatesViewController {
     
-    @objc private func refreshData() {
+    @objc internal func refreshData() {
         
         if displayingNews {
            articles = []
-           downloadArticles(offset: 0, limit: 20)
+           downloadArticles(offset: 0, limit: 15)
         } else {
             polling = []
             downloadPolls()
@@ -122,9 +137,12 @@ extension UpdatesViewController {
     }
     
     private func downloadArticles(offset: Int, limit: Int) {
-        let endpoint = "http://165.22.233.166:10101/news"
+        let endpoint = "http://130.211.124.161:10101/news?limit=\(limit)&offset=\(offset)"
         let errorHandler = {
-            uiHelper.displayError(controller: self, title: "Error Getting Articles", message: "We're sorry, but we're having an issue fetching articles. Please reload or try again later", actionTitle: "Reload", onAction: { (action) in
+            self.refreshControl.endRefreshing()
+            self.loadingIndicator.stopAnimating()
+            self.loadingIndicator.isHidden = true
+            uiHelper.displayError(controller: self, title: "Error Getting Articles", message: "We're sorry, but we're having an issue fetching articles. Please reload or try again later. Ensure that you have an active internet connection", actionTitle: "Reload", onAction: { (action) in
                 self.downloadArticles(offset: offset, limit: limit)
             })
         }
@@ -135,10 +153,13 @@ extension UpdatesViewController {
             }
             do {
                 let json = try JSON(data: data)
-                guard let articles = json["newsArticles"].array else {
+                guard let articles = json["newsArticles"].array, let items = json["count"].int else {
                     errorHandler()
                     return
                 }
+                
+                self.articlesCount = items
+                
                 var processedArticles: [NewsArticle] = []
                 for article in articles {
                     guard let title = article["title"].string else {
@@ -181,9 +202,9 @@ extension UpdatesViewController {
     }
     
     private func downloadPolls() {
-        let endpoint = "http://165.22.233.166:10101/polling"
+        let endpoint = "http://130.211.124.161:10101/polling"
         let errorHandler = {
-            uiHelper.displayError(controller: self, title: "Error Getting Polling", message: "We're sorry, but we're having an issue fetching polls. Please reload or try again later", actionTitle: "Reload", onAction: { (action) in
+            uiHelper.displayError(controller: self, title: "Error Getting Polling", message: "We're sorry, but we're having an issue fetching polls. Please reload or try again later. Ensure that you have an active internet connection", actionTitle: "Reload", onAction: { (action) in
                 self.downloadPolls()
             })
         }

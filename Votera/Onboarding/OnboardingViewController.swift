@@ -14,13 +14,40 @@ class OnboardingViewController: UIViewController {
         let locationPicker = LocationPicker()
         locationPicker.pickCompletion = { location in
             // Do something with the location the user picked.
-            self.dismiss(animated: true, completion: {
-                self.performSegue(withIdentifier: "logged", sender: self)
-            })
+            
+            let errorHelper = {
+                uiHelper.displayError(controller: self, title: "Error Setting Location", message: "Sorry, we encountered an error while trying to save your location. Please try again", actionTitle: nil, onAction: nil)
+            }
+            
+            DispatchQueue.main.async {
+                guard let latitude = location.coordinate?.latitude, let longitude = location.coordinate?.longitude else {
+                    errorHelper()
+                    return
+                }
+                
+                let loc = Location(lat: latitude, long: longitude)
+                let encoder = JSONEncoder()
+                do {
+                    let locData = try encoder.encode(loc)
+                    UserDefaults.standard.set(locData, forKey: "loc")
+                    currentLocation = loc
+                } catch {
+                    errorHelper()
+                    return
+                }
+              
+                
+                let delegate = UIApplication.shared.delegate as! AppDelegate
+                delegate.switchToFeed()
+            }
         }
+        
+        
+        
        locationPicker.addBarButtons()
         
         let navigationController = UINavigationController(rootViewController: locationPicker)
+        
         present(navigationController, animated: true, completion: nil)
     }
     

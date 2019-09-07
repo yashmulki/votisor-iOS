@@ -19,6 +19,8 @@ class VTPollingTableViewCell: UITableViewCell {
     static let bqImage = UIImage(named: "party-bq")
     static let ppcImage = UIImage(named: "party-ppc")
     
+    private var incrementAmountBase: CGFloat = 0.5
+    
     private let conservativeColor = UIColor(red: 18/255, green: 75/255, blue: 154/255, alpha: 1)
     private let liberalColor = UIColor(red: 239/255, green: 29/255, blue: 41/255, alpha: 1)
     private let ndpColor = UIColor(red: 243/255, green: 129/255, blue: 47/255, alpha: 1)
@@ -77,11 +79,16 @@ class VTPollingTableViewCell: UITableViewCell {
     }
     
     func animate() {
-        timer = Timer.scheduledTimer(withTimeInterval: 0.001, repeats: true, block: { (timer) in
-            if self.progress + 0.5 >= self.desiredProgress {
+        timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { (timer) in
+            
+            var increment = max(self.incrementAmountBase * abs(self.desiredProgress/2-self.progress)/10, 0.5)
+            
+            if self.progress + increment >= self.desiredProgress {
+                self.incrementAmountBase = 0.0
+                increment = 0
                 timer.invalidate()
             }
-            self.progress += 0.5
+            self.progress += increment
             self.progressBar.progressValue = self.progress
             self.progressBar.setNeedsDisplay()
            

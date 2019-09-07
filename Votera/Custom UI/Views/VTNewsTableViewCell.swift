@@ -50,7 +50,7 @@ class VTNewsTableViewCell: UITableViewCell {
         case "Nationalobserver.com":
             image = UIImage(named: "newsSource-natobserver")
         case "Huffingtonpost.ca":
-            image = UIImage(named: "newsSource-natobserver")
+            image = UIImage(named: "newsSource-huffpost")
         default:
             break
         }

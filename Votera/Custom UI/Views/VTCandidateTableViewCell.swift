@@ -42,14 +42,16 @@ class VTCandidateTableViewCell: UITableViewCell {
         self.urlOpener = urlOpener
         photoView.imageFromServerURL(candidate.imageURL, placeHolder: UIImage(named: "placeholder"))
         nameLabel.text = candidate.name
-        partyLabel.text = candidate.party
+        partyLabel.text = candidate.party.uppercased()
         
         if candidate.facebook == "none" {
-            facebook.removeFromSuperview()
-        } else if candidate.twitter == "none" {
-            twitter.removeFromSuperview()
-        } else if candidate.web == "none" {
-            web.removeFromSuperview()
+            facebook.isEnabled = false
+        }
+        if candidate.twitter == "none" {
+            twitter.isEnabled = false
+        }
+        if candidate.web == "none" || candidate.web == ""{
+            web.isEnabled = false
         }
     }
     

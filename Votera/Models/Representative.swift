@@ -16,17 +16,19 @@ struct Representative {
     var twitter: String
     var facebook: String
     var position: String
-    var offices: [Office]?
-    var votes: [Vote]?
+    var offices: [Office]
+    var votes: [Vote]
+    var party: String
+    var district: String
 }
 
 struct Office {
-    var type: String
-    var address: String
-    var tel: String
+    var type: String?
+    var address: String?
+    var tel: String?
 }
 
 struct Vote {
-    var title: String
-    var decision: String
+    var title: String?
+    var decision: String?
 }

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		020ECBA7230D84200037622D /* RevealingSplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020ECBA3230D841F0037622D /* RevealingSplashView.swift */; };
+		020ECBA8230D84200037622D /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020ECBA4230D84200037622D /* Animations.swift */; };
+		020ECBA9230D84200037622D /* SplashAnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020ECBA5230D84200037622D /* SplashAnimationType.swift */; };
+		020ECBAA230D84200037622D /* SplashAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020ECBA6230D84200037622D /* SplashAnimatable.swift */; };
 		0216828722F5EB9400E4ED6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0216828622F5EB9400E4ED6E /* AppDelegate.swift */; };
 		0216828922F5EB9400E4ED6E /* UpdatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0216828822F5EB9400E4ED6E /* UpdatesViewController.swift */; };
 		0216828B22F5EB9400E4ED6E /* ElectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0216828A22F5EB9400E4ED6E /* ElectionViewController.swift */; };
@@ -34,8 +38,9 @@
 		0262FADD23025B6A00A28EF2 /* VTCandidateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0262FADC23025B6A00A28EF2 /* VTCandidateTableViewCell.swift */; };
 		0262FAE6230276C200A28EF2 /* RepresentativesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0262FAE5230276C200A28EF2 /* RepresentativesViewController.swift */; };
 		0262FAE82302772400A28EF2 /* VTMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0262FAE72302772400A28EF2 /* VTMapTableViewCell.swift */; };
-		0262FAEA230280D300A28EF2 /* VTDualRepresentativeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0262FAE9230280D300A28EF2 /* VTDualRepresentativeTableViewCell.swift */; };
 		0262FAED230288D300A28EF2 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0262FAEC230288D300A28EF2 /* OnboardingViewController.swift */; };
+		0264BE52230C2375002888B0 /* VTNestedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0264BE51230C2375002888B0 /* VTNestedViewController.swift */; };
+		0264BE5B230C2462002888B0 /* VTNestedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0264BE5A230C2462002888B0 /* VTNestedTableViewController.swift */; };
 		02ACB4C22301267800935DDE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02ACB4B52301266B00935DDE /* Alamofire.framework */; };
 		02ACB4C32301267800935DDE /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 02ACB4B52301266B00935DDE /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		02ACB4C82301298100935DDE /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ACB4C72301298100935DDE /* SwiftyJSON.swift */; };
@@ -44,6 +49,10 @@
 		02C3976B22FBDE700004DB69 /* NewsArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C3976A22FBDE700004DB69 /* NewsArticle.swift */; };
 		02C3976D22FBDED10004DB69 /* VTNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C3976C22FBDED10004DB69 /* VTNewsTableViewCell.swift */; };
 		02C3976F22FBDF260004DB69 /* VTPollingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C3976E22FBDF260004DB69 /* VTPollingTableViewCell.swift */; };
+		02C6B11C230A9C5F00B30A78 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C6B11B230A9C5F00B30A78 /* SettingsTableViewController.swift */; };
+		02C6B125230AA49000B30A78 /* VTRepresentativeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C6B124230AA49000B30A78 /* VTRepresentativeTableViewCell.swift */; };
+		02C6B127230AAAB100B30A78 /* VTRepresentativeDetailHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C6B126230AAAB100B30A78 /* VTRepresentativeDetailHeaderTableViewCell.swift */; };
+		02C6B129230AAAFD00B30A78 /* VTVoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C6B128230AAAFD00B30A78 /* VTVoteTableViewCell.swift */; };
 		02D34E402309A69800A6A780 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D34E332309A69700A6A780 /* Helpers.swift */; };
 		02D34E412309A69800A6A780 /* StyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D34E3B2309A69700A6A780 /* StyleKit.swift */; };
 		02D34E422309A69800A6A780 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D34E3C2309A69700A6A780 /* Protocol.swift */; };
@@ -143,6 +152,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		020ECBA3230D841F0037622D /* RevealingSplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevealingSplashView.swift; sourceTree = "<group>"; };
+		020ECBA4230D84200037622D /* Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
+		020ECBA5230D84200037622D /* SplashAnimationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashAnimationType.swift; sourceTree = "<group>"; };
+		020ECBA6230D84200037622D /* SplashAnimatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashAnimatable.swift; sourceTree = "<group>"; };
 		0216828322F5EB9400E4ED6E /* Votera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Votera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0216828622F5EB9400E4ED6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0216828822F5EB9400E4ED6E /* UpdatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatesViewController.swift; sourceTree = "<group>"; };
@@ -176,8 +189,9 @@
 		0262FADC23025B6A00A28EF2 /* VTCandidateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VTCandidateTableViewCell.swift; sourceTree = "<group>"; };
 		0262FAE5230276C200A28EF2 /* RepresentativesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentativesViewController.swift; sourceTree = "<group>"; };
 		0262FAE72302772400A28EF2 /* VTMapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VTMapTableViewCell.swift; sourceTree = "<group>"; };
-		0262FAE9230280D300A28EF2 /* VTDualRepresentativeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VTDualRepresentativeTableViewCell.swift; sourceTree = "<group>"; };
 		0262FAEC230288D300A28EF2 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		0264BE51230C2375002888B0 /* VTNestedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VTNestedViewController.swift; sourceTree = "<group>"; };
+		0264BE5A230C2462002888B0 /* VTNestedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VTNestedTableViewController.swift; sourceTree = "<group>"; };
 		02ACB4A92301266B00935DDE /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		02ACB4C72301298100935DDE /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		02ACB4C9230129B700935DDE /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -185,6 +199,10 @@
 		02C3976A22FBDE700004DB69 /* NewsArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticle.swift; sourceTree = "<group>"; };
 		02C3976C22FBDED10004DB69 /* VTNewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VTNewsTableViewCell.swift; sourceTree = "<group>"; };
 		02C3976E22FBDF260004DB69 /* VTPollingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VTPollingTableViewCell.swift; sourceTree = "<group>"; };
+		02C6B11B230A9C5F00B30A78 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		02C6B124230AA49000B30A78 /* VTRepresentativeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VTRepresentativeTableViewCell.swift; sourceTree = "<group>"; };
+		02C6B126230AAAB100B30A78 /* VTRepresentativeDetailHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VTRepresentativeDetailHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		02C6B128230AAAFD00B30A78 /* VTVoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VTVoteTableViewCell.swift; sourceTree = "<group>"; };
 		02D34E332309A69700A6A780 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		02D34E3B2309A69700A6A780 /* StyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleKit.swift; sourceTree = "<group>"; };
 		02D34E3C2309A69700A6A780 /* Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
@@ -222,6 +240,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		020ECBA2230D84080037622D /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				020ECBA4230D84200037622D /* Animations.swift */,
+				020ECBA3230D841F0037622D /* RevealingSplashView.swift */,
+				020ECBA6230D84200037622D /* SplashAnimatable.swift */,
+				020ECBA5230D84200037622D /* SplashAnimationType.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		0216827A22F5EB9400E4ED6E = {
 			isa = PBXGroup;
 			children = (
@@ -308,6 +337,8 @@
 				021682B622F5EC7F00E4ED6E /* VTTabBarController.swift */,
 				021682C222F5F6ED00E4ED6E /* VTNavigationBar.swift */,
 				021682BD22F5F19500E4ED6E /* VTViewController.swift */,
+				0264BE51230C2375002888B0 /* VTNestedViewController.swift */,
+				0264BE5A230C2462002888B0 /* VTNestedTableViewController.swift */,
 				021682C422F5F7BA00E4ED6E /* VTSwitchableViewController.swift */,
 			);
 			path = Configuration;
@@ -331,6 +362,7 @@
 				024B772F230178DF003ADB96 /* DiscoverViewController.swift */,
 				0262FAE5230276C200A28EF2 /* RepresentativesViewController.swift */,
 				025730FF23082FF1000CFF41 /* RepresentativeDetailViewController.swift */,
+				02C6B11B230A9C5F00B30A78 /* SettingsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -338,6 +370,7 @@
 		021682CA22F5F83700E4ED6E /* External */ = {
 			isa = PBXGroup;
 			children = (
+				020ECBA2230D84080037622D /* New Group */,
 				02DEC8CD22FD486A00E3117D /* UIImageViewExtensions.swift */,
 				021682CB22F5F84600E4ED6E /* TTSegmentedControl.swift */,
 				02DEC8CB22FD444A00E3117D /* LinearProgressBar.swift */,
@@ -353,7 +386,9 @@
 				024B772623017143003ADB96 /* VTDateTableViewCell.swift */,
 				0262FADC23025B6A00A28EF2 /* VTCandidateTableViewCell.swift */,
 				0262FAE72302772400A28EF2 /* VTMapTableViewCell.swift */,
-				0262FAE9230280D300A28EF2 /* VTDualRepresentativeTableViewCell.swift */,
+				02C6B124230AA49000B30A78 /* VTRepresentativeTableViewCell.swift */,
+				02C6B126230AAAB100B30A78 /* VTRepresentativeDetailHeaderTableViewCell.swift */,
+				02C6B128230AAAFD00B30A78 /* VTVoteTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -618,10 +653,11 @@
 				02D34E452309A69800A6A780 /* LocationItem.swift in Sources */,
 				022C815322FE7F3A001A2658 /* ContentView.swift in Sources */,
 				02C3976F22FBDF260004DB69 /* VTPollingTableViewCell.swift in Sources */,
+				0264BE52230C2375002888B0 /* VTNestedViewController.swift in Sources */,
 				021682BE22F5F19500E4ED6E /* VTViewController.swift in Sources */,
 				02C3976D22FBDED10004DB69 /* VTNewsTableViewCell.swift in Sources */,
 				024B773323017A83003ADB96 /* MenuViewController.swift in Sources */,
-				0262FAEA230280D300A28EF2 /* VTDualRepresentativeTableViewCell.swift in Sources */,
+				02C6B129230AAAFD00B30A78 /* VTVoteTableViewCell.swift in Sources */,
 				024B772723017143003ADB96 /* VTDateTableViewCell.swift in Sources */,
 				02ACB4C82301298100935DDE /* SwiftyJSON.swift in Sources */,
 				02C3976B22FBDE700004DB69 /* NewsArticle.swift in Sources */,
@@ -630,10 +666,14 @@
 				024B773723017AA0003ADB96 /* ResultViewController.swift in Sources */,
 				021682B722F5EC7F00E4ED6E /* VTTabBarController.swift in Sources */,
 				02D34E432309A69800A6A780 /* LocationPicker.swift in Sources */,
+				02C6B127230AAAB100B30A78 /* VTRepresentativeDetailHeaderTableViewCell.swift in Sources */,
 				0216828722F5EB9400E4ED6E /* AppDelegate.swift in Sources */,
 				025730F723082473000CFF41 /* Representative.swift in Sources */,
+				020ECBA8230D84200037622D /* Animations.swift in Sources */,
+				020ECBA7230D84200037622D /* RevealingSplashView.swift in Sources */,
 				02ACB4CA230129B700935DDE /* APIManager.swift in Sources */,
 				0216828922F5EB9400E4ED6E /* UpdatesViewController.swift in Sources */,
+				020ECBAA230D84200037622D /* SplashAnimatable.swift in Sources */,
 				02ACB4CC23012D2C00935DDE /* UIHelper.swift in Sources */,
 				0262FADD23025B6A00A28EF2 /* VTCandidateTableViewCell.swift in Sources */,
 				0262FAE82302772400A28EF2 /* VTMapTableViewCell.swift in Sources */,
@@ -642,12 +682,16 @@
 				0262FAED230288D300A28EF2 /* OnboardingViewController.swift in Sources */,
 				0262FAE6230276C200A28EF2 /* RepresentativesViewController.swift in Sources */,
 				022D37FF22F640F8006AED2E /* VTStyleConstants.swift in Sources */,
+				0264BE5B230C2462002888B0 /* VTNestedTableViewController.swift in Sources */,
 				02D34E402309A69800A6A780 /* Helpers.swift in Sources */,
+				020ECBA9230D84200037622D /* SplashAnimationType.swift in Sources */,
 				02D34E412309A69800A6A780 /* StyleKit.swift in Sources */,
 				02E107C722FD4EA90090BF06 /* PolIItem.swift in Sources */,
 				0257310023082FF1000CFF41 /* RepresentativeDetailViewController.swift in Sources */,
 				021682C322F5F6ED00E4ED6E /* VTNavigationBar.swift in Sources */,
 				02D34E442309A69800A6A780 /* LocationCell.swift in Sources */,
+				02C6B11C230A9C5F00B30A78 /* SettingsTableViewController.swift in Sources */,
+				02C6B125230AA49000B30A78 /* VTRepresentativeTableViewCell.swift in Sources */,
 				022C815722FE8A81001A2658 /* OrganizeViewController.swift in Sources */,
 				02DEC8CC22FD444A00E3117D /* LinearProgressBar.swift in Sources */,
 				021682C522F5F7BA00E4ED6E /* VTSwitchableViewController.swift in Sources */,
@@ -832,6 +876,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = MX7F8VC2CH;
 				INFOPLIST_FILE = Votera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -841,7 +886,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yashmulki.Votera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -851,6 +896,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = MX7F8VC2CH;
 				INFOPLIST_FILE = Votera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -860,7 +906,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yashmulki.Votera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

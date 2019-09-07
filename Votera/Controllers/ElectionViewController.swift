@@ -10,13 +10,21 @@ import UIKit
 import EventKit
 import SafariServices
 
-class ElectionViewController: VTViewController {
+class ElectionViewController: VTViewController, Reloadable {
+   
+    func hardRefresh() {
+        self.candidates = []
+        table.reloadData()
+        loadingIndicator.startAnimating()
+        loadingIndicator.isHidden = false
+        refreshData()
+    }
     
     @IBOutlet var table: UITableView!
     @IBOutlet var loadingIndicator: UIActivityIndicatorView!
     
     private let refreshControl = UIRefreshControl()
-     private var safariVC: SFSafariViewController?
+    private var safariVC: SFSafariViewController?
     
 //    var candidates: [Candidate] = [Candidate(name: "Jane Doe", imageURL: "jane.com", party: "Conservative Party of Canada", web: "janedoe.org", twitter: "twitter.com/janedoe", facebook: "http://facebook.com/janedoe"), Candidate(name: "Jane Doe", imageURL: "jane.com", party: "Conservative Party of Canada", web: "janedoe.org", twitter: "twitter.com/janedoe", facebook: "facebook.com/janedoe"), Candidate(name: "Jane Doe", imageURL: "jane.com", party: "Conservative Party of Canada", web: "janedoe.org", twitter: "twitter.com/janedoe", facebook: "facebook.com/janedoe"), Candidate(name: "Jane Doe", imageURL: "jane.com", party: "Conservative Party of Canada", web: "janedoe.org", twitter: "twitter.com/janedoe", facebook: "facebook.com/janedoe"), Candidate(name: "Jane Doe", imageURL: "jane.com", party: "Conservative Party of Canada", web: "janedoe.org", twitter: "twitter.com/janedoe", facebook: "facebook.com/janedoe")]
     var candidates: [Candidate] = []
@@ -40,6 +48,8 @@ class ElectionViewController: VTViewController {
         }
         refreshControl.addTarget(self, action: #selector(self.refreshData), for: .valueChanged)
         downloadCandidates()
+        
+        controllers.append(self)
     }
 
 
@@ -48,7 +58,7 @@ class ElectionViewController: VTViewController {
 extension ElectionViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return candidates.count + 2
+        return candidates.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -94,17 +104,25 @@ extension ElectionViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension ElectionViewController {
     
-    @objc private func refreshData() {
+    @objc internal func refreshData() {
         downloadCandidates()
     }
     
     private func downloadCandidates() {
-        let endpoint = "http://165.22.233.166:10101/election?latitude=45.524&longitude=-73.596"
         let errorHandler = {
-            uiHelper.displayError(controller: self, title: "Error Getting Electio Data", message: "We're sorry, but we're having an issue fetching election data. Please reload or try again later", actionTitle: "Reload", onAction: { (action) in
+            self.refreshControl.endRefreshing()
+            self.loadingIndicator.stopAnimating()
+            self.loadingIndicator.isHidden = true
+            uiHelper.displayError(controller: self, title: "Error Getting Election Data", message: "We're sorry, but we're having an issue fetching election data. Please reload or try again later. Ensure that you have an active internet connection", actionTitle: "Reload", onAction: { (action) in
                 self.downloadCandidates()
             })
         }
+        
+        guard let currentLocation = currentLocation else {
+            errorHandler()
+            return
+        }
+        let endpoint = "http://130.211.124.161:10101/election?latitude=\(currentLocation.lat)&longitude=\(currentLocation.long)"
         
         APIManager.request(endpoint: endpoint) { (data, error) in
             guard let data = data, error == nil else {
@@ -138,8 +156,11 @@ extension ElectionViewController {
                     processedCandidates.append(processedCandidate)
                 }
                 
+                processedCandidates.append(contentsOf: [Candidate(name: "Jane Doe", imageURL: "jane.com", party: "Conservative Party of Canada", web: "janedoe.org", twitter: "twitter.com/janedoe", facebook: "http://facebook.com/janedoe"), Candidate(name: "Jane Doe", imageURL: "jane.com", party: "Conservative Party of Canada", web: "janedoe.org", twitter: "twitter.com/janedoe", facebook: "http://facebook.com/janedoe")])
+                
                 // Add to the data source and reload table
                 self.candidates = processedCandidates
+                
                 
                 // Get election date
                 if let electionDateString = json["electionDate"].string {
@@ -164,34 +185,40 @@ extension ElectionViewController {
     
     
     private func addToCalendar() {
-        let eventStore : EKEventStore = EKEventStore()
         
-        eventStore.requestAccess(to: .event) { (granted, error) in
+        
+            let eventStore : EKEventStore = EKEventStore()
             
-            if (granted) && (error == nil) {
-                print("granted \(granted)")
-                print("error \(error)")
+            eventStore.requestAccess(to: .event) { (granted, error) in
                 
-                let event:EKEvent = EKEvent(eventStore: eventStore)
-                
-                event.title = "2019 Federal Election"
-                event.startDate = self.electionDate
-                event.endDate = self.electionDate
-                event.notes = "Remember to vote in the federal election - visit votera.org for more"
-                event.calendar = eventStore.defaultCalendarForNewEvents
-                do {
-                    try eventStore.save(event, span: .thisEvent)
-                } catch let error as NSError {
-                    print("failed to save event with error : \(error)")
+                if (granted) && (error == nil) {
+                    print("granted \(granted)")
+                    print("error \(error)")
+                    
+                    let event:EKEvent = EKEvent(eventStore: eventStore)
+                    
+                    event.title = "2019 Federal Election"
+                    event.startDate = self.electionDate
+                    event.endDate = self.electionDate
+                    event.isAllDay = true
+                    event.notes = "Remember to vote in the federal election - visit yashmulki.me/votisor for more"
+                    event.calendar = eventStore.defaultCalendarForNewEvents
+                    do {
+                        try eventStore.save(event, span: .thisEvent)
+                    } catch let error as NSError {
+                        print("failed to save event with error : \(error)")
+                    }
+                    
+                    uiHelper.displayError(controller: self, title: "Added Election", message: "We have added the election to your calendar", actionTitle: nil, onAction: nil)
+                    print("Saved Event")
                 }
-                uiHelper.displayError(controller: self, title: "Added Election", message: "We have added the election to your calendar", actionTitle: nil, onAction: nil)
-                print("Saved Event")
-            }
-            else{
-                 uiHelper.displayError(controller: self, title: "Couldn't Add Election", message: "We were unable to add the election to your calendar– check that calendar permissions have been granted in the Settings app", actionTitle: nil, onAction: nil)
-                print("failed to save event with error : \(error) or access not granted")
-            }
+                else{
+                    uiHelper.displayError(controller: self, title: "Couldn't Add Election", message: "We were unable to add the election to your calendar– check that calendar permissions have been granted in the Settings app", actionTitle: nil, onAction: nil)
+                    print("failed to save event with error : \(error) or access not granted")
+                }
         }
+        
+        
     }
 }
 

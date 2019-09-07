@@ -20,7 +20,12 @@ class UIHelper: NSObject {
         }
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        controller.present(alert, animated: true, completion: nil)
+        
+        DispatchQueue.main.async {
+             controller.present(alert, animated: true, completion: nil)
+        }
+        
+       
     }
     
 }

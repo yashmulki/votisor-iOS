@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Votisor</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -17,23 +19,30 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>5</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Calendar access is required to add the election to your calendar</string>
+	<key>NSContactsUsageDescription</key>
+	<string>In order to let you send messages to contacts encouraging them to vote through Votisor, contacts access is required so that we can show you a list of all of your contacts so you can select which contacts to message </string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Your location is used to find your electoral district</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
-	<key>NSCalendarsUsageDescription</key>
-	<string>Calendar Access is Required To Add the Election to Your Calendar</string>
-	<key>NSContactsUsageDescription</key>
-	<string>We need to access contacts to let you encourage them to vote</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We need your location to find your district</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIStatusBarHidden</key>
+	<true/>
 	<key>UIStatusBarTintParameters</key>
 	<dict>
 		<key>UINavigationBar</key>

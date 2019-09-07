@@ -49,7 +49,7 @@ class OrganizeViewController: VTViewController, MFMessageComposeViewControllerDe
     func sendMessage(recipient: String) {
         if MFMessageComposeViewController.canSendText() {
             messageVC = MFMessageComposeViewController()
-            messageVC!.body = "Voting is very important! Remember to vote this October 20th in the Canadian Federal Election. Visit votera.org/app for more";
+            messageVC!.body = "Voting is very important! Remember to vote this October 20th in the Canadian Federal Election. Visit yashmulki.me/votisor for more";
             messageVC!.recipients = [recipient]
             messageVC?.messageComposeDelegate = self
             self.present(messageVC!, animated: true, completion: nil)

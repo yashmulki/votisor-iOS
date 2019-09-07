@@ -10,9 +10,18 @@ import UIKit
 
 class VTTabBarController: UITabBarController {
 
+//    fileprivate lazy var defaultTabBarHeight = { tabBar.frame.size.height }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "SplashIcon")!,iconInitialSize: CGSize(width: 100, height: 100), backgroundColor: StyleConstants.vtRed)
+        //Adds the revealing splash view as a sub view
+        self.view.addSubview(revealingSplashView)
         
+        //Starts animation
+        revealingSplashView.startAnimation(){
+            print("Completed")
+        }
         // Set tab bar color
         tabBar.tintColor = StyleConstants.vtRed
         
@@ -31,6 +40,16 @@ class VTTabBarController: UITabBarController {
         }
     }
     
-    
+//    override func viewWillLayoutSubviews() {
+//        super.viewWillLayoutSubviews()
+//
+//        let newTabBarHeight = defaultTabBarHeight + 5
+//
+//        var newFrame = tabBar.frame
+//        newFrame.size.height = newTabBarHeight
+//        newFrame.origin.y = view.frame.size.height - newTabBarHeight
+//
+//        tabBar.frame = newFrame
+//    }
     
 }
